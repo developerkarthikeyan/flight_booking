@@ -1,0 +1,155 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+/* body{
+    font-family: "Poppins", serif
+} */
+.container{
+    display:flex;
+flex-direction: column;
+background-color: blue;
+width: 100%;
+position: relative;
+}
+.section1{
+display: flex;
+justify-content:flex-start;
+background-color: black;
+padding: 10px 10px;
+}
+.flights,.hotels{
+    padding: 10px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.searchdiv{
+    display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+height: auto;
+padding: 10px 10px;
+}
+.input1,.input2,.date{
+    padding: 10px 10px;
+    padding-left: 10%;
+    /* margin-top:5px; */
+width: 100%;
+}
+
+.inputsdiv{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
+border-radius: 10px;
+overflow: hidden;
+width: 100%;
+}
+.todiv{
+    margin-top: 5px;
+}
+.datediv{
+    margin-top: 5px;
+ display: flex;
+ justify-content: space-around;
+ width: 100%;   
+background-color: white;
+}
+.date{
+    width: 100%;
+    border: none;
+    background: none;
+}
+.calendar{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    
+}
+.searchbutton{
+    padding-top: 10px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+margin-top: 20px;
+
+}
+.searchbtn{
+    width: 70%;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    /* background-color: blue; */
+margin-bottom: 10px;
+}
+.datediv,
+.fromdiv,.todiv{
+    width: 100%;
+    position: relative;
+
+}
+.from-icon,
+.toicon,.date-icon{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+.datespan{
+    padding: right 10rem; 
+}
+.popUp{
+    display: flex;
+margin-bottom: 10px;
+width: 100%;
+flex-direction: column;
+align-items: center;
+background-color: beige;
+position: absolute;
+top: 0;
+height: 100vh;
+}
+.inputsectoin{
+    padding-bottom: 20px;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 3% 3%;
+}
+.popupinput{
+    padding:5% ;
+padding-left: 10%;
+    border-radius: 10px;
+    width: 100%;
+font-size: 18px;
+background:rgb(245, 242, 242);
+border: none;
+}
+.popupinput:focus{
+    border: 1px solid;
+border-color: blue;
+background-color: white;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+}.fromairports{
+    padding-top: 20px;
+}
+
+.exiticon{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 5px;
+}
+.popupheader{
+    position: relative;
+    width: 100%;
+    padding: 10px 10px;
+}
+.popupheading{
+    text-align: center;
+}

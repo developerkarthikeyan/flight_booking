@@ -1,0 +1,21 @@
+.dynamicformparent{
+position: absolute;
+top:0;
+height: 100%;
+width: 100%;
+background-color: white;
+}
+.passengerinfocontainer{
+    border: 1px solid;
+}
+    .formcontainer{
+        display: flex;
+flex-direction: column;
+    }
+    .passengernamediv{
+        
+        
+
+
+        
+    }

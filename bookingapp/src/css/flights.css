@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    font-family: "Poppins", serif;   
+}
+.flight-img{
+    border: none;
+}
+.parent-container{
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+.flight-container{
+display: flex;
+flex-direction: column;
+border: 1px solid;
+width: 100%;
+padding: 10px 10px;
+border-radius: 10px;
+box-shadow: 5px 5px 10px gray;
+border:none;
+}
+.airline-namediv{
+    display: flex;
+    /* padding-top:10px; */
+}
+.airline-name{
+    padding-top: 10px;
+}
+.filghtdetali1{
+    display: flex;
+flex-direction: column;
+/* padding: 3% 5%; */
+}
+.flight-timingdiv{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 30px;
+    
+}
+.flight-namediv{
+    display: flex;
+    justify-content: space-between;
+}
+.middlediv{
+display: flex;
+width: 100%;
+margin-top:20px ;
+}
+.gapdiv{
+    height: 1px;
+    width: 100%;
+    background-color: black;
+
+}
+.flight-to-icom{
+padding-left: 10px;
+margin-top: -10px;
+padding-right: 10px;
+}
+.middleline{
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+}
+.pricediv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+padding: 20px 10px;
+}
+.select-btn{
+    padding: 10px 10px;
+margin-left: 10px;
+border-radius: 10px;
+border: none;
+padding-right: 40px;
+padding-left: 20px;
+}
+.btndiv{
+    position: relative;
+
+}
+.rightarrow-icon{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    left: 70%;
+}
+.price{
+    padding-top: 20px;
+}
+.seaticon{
+    font-size: 50px;
+}
