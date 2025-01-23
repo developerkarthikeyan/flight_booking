@@ -4,18 +4,41 @@ top:0;
 height: 100%;
 width: 100%;
 background-color: white;
+border: 1px solid;
+padding: 10px 15px;
 }
-.passengerinfocontainer{
-    border: 1px solid;
-}
-    .formcontainer{
-        display: flex;
-flex-direction: column;
+
+
+    .karthi{
+        background-color:gold ;
+        padding: 14px 14px;
+        border-radius: 10px;
+width: 100%;
     }
     .passengernamediv{
-        
-        
+        display: flex;
+        flex-direction: column;
+        width: 100%;    
 
-
-        
     }
+    .passengernamediv input{
+        padding: 6px 6px;
+        border-radius: 5px;
+        border:1px gray;
+margin-top: 10px;
+width: 100%;    
+}
+.age-gender-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+.genderParent{
+    background-color: aqua;
+
+}
+.age{
+    background-color: red;
+    color: blue;
+}
