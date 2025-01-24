@@ -34,11 +34,38 @@ width: 100%;
     justify-content: space-between;
     /* background-color: red; */
 }
-.genderParent{
-    background-color: aqua;
+
+.age{
+    color: blue;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 1px;
+}
+.age input{
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
 
 }
-.age{
-    background-color: red;
-    color: blue;
+.genderParent{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.genderSections{
+    display: flex;
+justify-content: space-between;
+padding: 10px 5px;
+border: 1px solid red;
+}
+.genderSection-male p{
+padding: 0 10px;
+}
+.genderSection-female{
+    padding: 0 10px;
+}
+.select{
+background-color: red;
+color: white;
 }

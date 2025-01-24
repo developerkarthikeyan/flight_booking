@@ -28,6 +28,9 @@ const DynamicForms = () => {
    console.log(formData)
   };
 
+  const handleSelect=(event)=>{
+event.taget.classList.add("select")
+  }
   return (
     <div className="passengerinfocontainer">
  
@@ -51,31 +54,35 @@ const DynamicForms = () => {
 </div>
 
             <div className="age-gender-div">
-              <div classsName="age">
+              <div className="age">
 
             <label>
               Age:
             </label>
 
-              {/* <input
+              <input
                 type="number"
                 value={formData[index]?.age || ""}
                 onChange={(e) => handleInputChange(index, "age", e.target.value)}
                 required
-              /> */}
+              />
+              
               </div>
 <div className="genderParent">
 
             <label>
               gender
             </label>
-              
-              {/* <input
-                type="number"
-                value={formData[index]?.age || ""}
-                onChange={(e) => handleInputChange(index, "age", e.target.value)}
-                required
-              /> */}
+             
+             <div className="genderSections">
+              <section className="genderSection-male" onMouseEnter={handleSelect}>
+<p>Male</p>
+              </section>
+              <section className="genderSection-female">
+<p>Female</p>
+</section>
+
+             </div>
             </div>
 </div>
 
