@@ -1,3 +1,4 @@
+
 import "../css/booking.css"
 import logo from "../assets/1000126862.png"
 import { Divide as Hamburger } from 'hamburger-react'

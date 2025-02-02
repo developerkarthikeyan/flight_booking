@@ -3,61 +3,117 @@ import { RiArmchairFill } from "react-icons/ri";
 import "../css/seats.css";
 import "../css/dynamicform.css";
 import DynamicForms from "./dynamicform";
-function Seats(){
-let arr=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+import { useState, useEffect } from "react";
+import { FaPerson } from "react-icons/fa6";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+function Seats() {
+    const navigate=useNavigate();
+    const [loading, setLoading] = useState(true);
+    const { id } = useParams();
+    const [seats, setSeats] = useState([]);
+    const [data, setData] = useState([]);
+    const [firstHalf, setFirstHalf] = useState([]);
+    const [secondHalf, setSecondHalf] = useState([]);
 
+    console.log(id);
 
-const handleClick=(data)=>{
-console.log(data);
-}
-    return(
-        <>
-        <main className="seatcontainer">
-
-        <main className="seatContainer-child">
-<section className="seatsection1"> 
-    <div className="section1child">
-
-{
-                arr.map((data)=>{
- return (
-    <div onClick={()=>handleClick(data)} className="seaticondiv">
-    <PiArmchairLight className="seaticon" /> 
-
-    </div>
-)
-})
-}
-    </div>
-        
-</section>
-
-<section className="seatsection2"> 
-<div className="section2child">
-{
-                arr.map((data)=>{
- return (
-    <div className="seaticondiv">
-    <PiArmchairLight className="seaticon" /> 
-
-    </div>
-)
-})
-}
-</div>
-
-
-</section>
-
-        </main>
-        <div className="dynamicformparent">
-      <DynamicForms/>
+    const fetchSeats = async () => {
+        try {
+            console.log("Fetching seats...");
+            const response = await axios.post(`http://localhost:8000/flights/${id}`);
             
+            if (response.status === 200) {
+                setData(response.data.seats);
+                setFirstHalf(response.data.seats.slice(0, 36));
+                setSecondHalf(response.data.seats.slice(36, 72));
+                setLoading(false); // Data is loaded
+            }
+        } catch (err) {
+            console.error("Error fetching seats:", err);
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchSeats();
+    }, [id]);
+
+    console.log("first Data:", firstHalf);
+    
+    console.log("second Data:", secondHalf);
+
+    const handleClick = (seatNumber) => {
+        setSeats((prev) => 
+            prev.includes(seatNumber) 
+                ? prev.filter((seat) => seat !== seatNumber) 
+                : [...prev, seatNumber]
+        );
+    };
+
+    console.log("Selected Seats:", seats);
+
+    return (
+        <>
+            <div className="totalSeats">
+                <div className="totalSeats-child">
+                    <FaPerson className="person" />
+                    <p className="seatCount">{seats.length}</p>
+                </div>
+            </div>
+
+            {loading ? (
+                <div className="loading-container">
+                    <p>Loading seats...</p>
+                </div>
+            ) : (
+                <main className="seatcontainer">
+                    <main className="seatContainer-child">
+                        {/* First Section */}
+                        <section className="seatsection1">
+                            <div className="section1child">
+                            {firstHalf.map((seat) => (
+    <div className={`seatParent ${seats.includes(seat.seatId) ? "selected" : ""}`}>
+        <div onClick={() => handleClick(seat.seatId)} className="seaticondiv">
+            <p>{seat.seatNumber}</p>  {/* Rendering seatId */}
+            <PiArmchairLight className="seaticon" />
         </div>
-        </main>
-      
+    </div>
+))}
+
+                            </div>
+                        </section>
+
+                        {/* Second Section */}
+                        <section className="seatsection2">
+                            <div className="section2child">
+                            {secondHalf.map((seat) => (
+    <div className={`seatParent ${seats.includes(seat.seatId) ? "selected" : ""}`}>
+        <div onClick={() => handleClick(seat.seatId)} className="seaticondiv">
+            <p>{seat.seatNumber}</p>  {/* Rendering seatId */}
+            <PiArmchairLight className="seaticon" />
+        </div>
+    </div>
+))}
+
+                            </div>
+                        </section>
+                    </main>
+
+<div className="addpersonbtn">
+<button onClick={()=>navigate(`/auth/passengerinfo/${id}`,{state:seats})}>Add persons Info</button>
+
+</div>
+                    {/* Dynamic Form Placeholder */}
+                    <div className="dynamicformparent">
+                        {/* <DynamicForms /> */}
+                    </div>
+
+                </main>
+            )}
         </>
-    )
+    );
 }
+
 export default Seats;
-{/* <RiArmchairFill /> */}

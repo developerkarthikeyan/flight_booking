@@ -39,7 +39,8 @@ flex-direction: column;
 .flight-timingdiv{
     display: flex;
     justify-content: space-evenly;
-    padding: 30px 30px;
+    padding: 20px 30px;
+    /* background-color: blue; */
     
 }
 .flight-namediv{
@@ -49,6 +50,7 @@ flex-direction: column;
 .middlediv{
 display: flex;
 width: 100%;
+flex-direction: column;
 margin-top:20px ;
 }
 .gapdiv{
@@ -56,6 +58,9 @@ margin-top:20px ;
     width: 100%;
     background-color: black;
 
+}
+.timing p{
+    text-align: center;
 }
 .flight-to-icom{
 padding-left: 10px;
@@ -69,11 +74,12 @@ padding-right: 10px;
 }
 .pricediv{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
 padding: 20px 10px;
+/* background-color: green; */
 }
-.select-btn{
+.ipselect-btn{
     padding: 10px 10px;
 margin-left: 10px;
 border-radius: 10px;
@@ -82,18 +88,35 @@ padding-right: 40px;
 padding-left: 20px;
 }
 .btndiv{
-    position: relative;
-
+    /* position: relative; */
+display: flex;
+background-color: red;
+justify-content: center;
+border-radius: 5px;
+text-align: center;
+}
+.btndiv button{
+    background: transparent;
+    border: none;
+padding: 10px 10px;
+font-size: 1rem;
+cursor: pointer;
 }
 .rightarrow-icon{
-    position: absolute;
-    right: 0;
-    top: 20px;
-    left: 70%;
+    padding:10px 10px;
 }
 .price{
     padding-top: 20px;
 }
 .seaticon{
     font-size: 50px;
+}
+.duration p{
+    text-align: center;
+    padding-bottom:2px;
+}
+.flight-to-icom{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
 }

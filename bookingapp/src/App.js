@@ -8,6 +8,7 @@ import MyBooking from "./components/mybooking";
 import Navbar from "./components/navbar";
 import Flights from "./components/flights";
 import Seats from "./components/seats";
+import DynamicForms from "./components/dynamicform";
 const ProtectedRoute = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(null); // Initialize to null
     const [loading, setLoading] = useState(true);
@@ -58,7 +59,8 @@ function App() {
                 {/* <Route path="/mybooking" element={<ProtectedRoute><MyBooking /></ProtectedRoute>} /> */}
                 <Route path="/flights" element={<Flights/>}/>
                 <Route path="*" element={<Navigate to="/login" />} />
-                <Route path="/seats" element={<Seats/>}/>
+                <Route path="/seats/:id" element={<Seats/>}/>
+                <Route path="/auth/passengerinfo/:id" element={<DynamicForms/>} />
             </Routes>
  
 

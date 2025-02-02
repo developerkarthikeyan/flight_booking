@@ -1,9 +1,38 @@
 import "../css/flights.css"
 import { FaArrowRight } from "react-icons/fa";
 import { RiFlightLandFill } from "react-icons/ri";
+import { useEffect, useState } from "react";
+import { useLocation} from "react-router-dom";
+import { CgAirplane } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 function Flights(){
+    const navigate=useNavigate()
+    const location=useLocation();
+    const [data,setdata]=useState([]);
+    const state=location.state || {};
+    console.log("state from home page",state)
+    const handleSearch=async()=>{
+try{
+    // const request=await axios.post("http://localhost:8000/searchFligths",state)
+
+}catch(err){
+    console.log(err)
+}
+    }
+    const handleSelect=()=>{
+        navigate(`/seats/${11}`)
+    }
+    useEffect(()=>{
+handleSearch();
+
+    },[state])
     return(
         <>
+{
+Array.from({length:10}).map((index)=>{
+
+return(
 <main className="parent-container">
 
         <main className="flight-container">
@@ -21,19 +50,19 @@ function Flights(){
 <p>SXR</p>
     </div>
     <div className="middlediv">
+        <div className="duration">
+            <p>2hrs</p>
+        </div>
     <div className="gapdiv"></div>
     <div className="flight-to-icom"> 
-    <RiFlightLandFill />
+    <CgAirplane />
 </div>
     </div>
 
 
 <div className="to-time">
-
-
     <p> 03:50</p>
 <p>MAA</p>
-
 </div>
 </div>
         </section>
@@ -43,8 +72,8 @@ function Flights(){
    
 <div className="pricediv">
 <p className="price">deals from 10,6000</p>
-<div className="btndiv">
-<button className="select-btn">Select</button>
+<div className="btndiv" onClick={handleSelect}>
+<button className="select-btn" >Select</button>
 <div className="rightarrow-icon">
 <FaArrowRight />
 
@@ -54,8 +83,12 @@ function Flights(){
 </section>
         </main>
 </main>
-
+)
+})
+    
+        }        
         </>
+
     )
 }
 export default Flights;

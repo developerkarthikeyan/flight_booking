@@ -1,14 +1,3 @@
-.dynamicformparent{
-position: absolute;
-top:0;
-height: 100%;
-width: 100%;
-background-color: white;
-border: 1px solid;
-padding: 10px 15px;
-}
-
-
     .karthi{
         background-color:gold ;
         padding: 14px 14px;
@@ -19,7 +8,6 @@ width: 100%;
         display: flex;
         flex-direction: column;
         width: 100%;    
-
     }
     .passengernamediv input{
         padding: 6px 6px;
@@ -56,16 +44,46 @@ align-items: center;
 .genderSections{
     display: flex;
 justify-content: space-between;
-padding: 10px 5px;
-border: 1px solid red;
+ border: 0.5px solid gray;
+ position:relative;
+border-radius: 5px;
+z-index: 1;
+}
+.genderSection-male p,.genderSection-female{
+padding: 7px 10px;
 }
 .genderSection-male p{
-padding: 0 10px;
+
 }
-.genderSection-female{
-    padding: 0 10px;
-}
-.select{
+
+
+.animate{
+    position:absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
 background-color: red;
-color: white;
+z-index: -1;
+}
+.statediv,.state{
+    display: flex;
+    flex-direction: column;
+    
+}
+ .state input{
+    margin-top: 10px;
+padding-top: 10px;
+border-radius: 5px;
+border: none;
+padding-bottom: 5px;
+padding-left: 10px;
+}
+.passengerinfocontainer{
+    padding: 10px 10px;
+    position:relative;
+    width: 100%;
+background-color: brown;
+}
+.seatcomponent{
+    width: 100%;
 }

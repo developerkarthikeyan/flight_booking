@@ -14,7 +14,10 @@ width: 100%;
 }
 .seaticon{
     font-size:2em;
+
 }
+
+
 .section2child,.section1child {
     width: 10%;
     display: grid;
@@ -23,6 +26,7 @@ width: 100%;
 }
 .seaticondiv {
     text-align: center; /* Center align icons */
+    /* background-color: yellowgreen; */
 }
 
 /* .seatsection1,.seatsection2{
@@ -35,39 +39,48 @@ width: 100%;
 .seatsection1{
     padding-left:10px;
 }
-/* .section1child,.section2child{
-    width: 50%;
-    background-color: red;
+.selected{
+    background-color: grey;
+}
+.seatParent{
+    border: 1px solid;
+    padding: 5px 5px;
+    border-radius: 3px;
+}
+.totalSeats{
     display: flex;
-    flex-wrap: wrap;
-} */
-/* .seatContainer-child
-{
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 2px 15px;
 
-} */
- 
-
-/* @media(min-width:700px){
-    .seatcontainer{
-overflow-x: scroll;
-    padding-bottom: 0px !important;
-    }
-    .seatContainer-child{
+}
+.totalSeats p{
+    padding: 10px 10px;
+}
+.person{
+    margin-top: 10px;
+    font-size: 30px;
+}
+.seatCount{
+    font-size: 20px;
+}
+.totalSeats-child{
+    display: flex;
+border: 1px solid;
+border-radius: 3px;
+}
+.addpersonbtn{
 display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-flex-wrap: nowrap;
-width:1400px;
-
-    }
-    .seatsection2{
-background-color: red;
-
-    }
-    .seatsection1{
-        background-color: blue;
-    }
-} */
+width: 100%;
+justify-content: center;
+/* background-color: red; */
+padding: 10px 10px;
+}
+.addpersonbtn button{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius:10px;
+    border: none;
+    color:whitesmoke;
+    background-color: red;
+}

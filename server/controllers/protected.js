@@ -29,7 +29,7 @@ console.log("null");
     }
     console.log("decode",decode);
     db.query("select *from User where userId=?",[decode.id],(err,queryresult)=>{
-console.log(queryresult)
+console.log(queryresult);
 if(queryresult){
     res.status(200).send({user:queryresult});
 }
